@@ -55,7 +55,7 @@ text["configs"][1]["server"] = "{0}".format(info[1])
 text["configs"][1]["server_port"] = int(info[2])
 text["configs"][1]["password"] = "{0}".format(info[3])
 print(demjson.encode(text))
-f = open('D:\gui-config.json', 'w', encoding='UTF-8')
+f = open('D:/gui-config.json', 'w', encoding='UTF-8')
 f.write(demjson.encode(text))
 f.close()
 
