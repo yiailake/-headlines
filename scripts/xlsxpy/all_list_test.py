@@ -4,7 +4,7 @@ def get_all_list():
     all_list = []
     for i in range(0, 12):
         rulist = []
-        rupath = 'C:/Users/Administrator/Desktop/xlsxpy/xml/' + str(i) +'.xml'
+        rupath = 'C:/Users/Administrator/Desktop/codelines/scripts/xlsxpy/xml/' + str(i) +'.xml'
         #print(rupath)
         document = parse(rupath)
         tree = document.getroot()

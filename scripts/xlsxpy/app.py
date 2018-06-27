@@ -1,7 +1,7 @@
 from xml.etree.ElementTree import parse
 import xlsxwriter
 
-workbook = xlsxwriter.Workbook('C:/Users/Administrator/Desktop/xlsxpy/output.xlsx')
+workbook = xlsxwriter.Workbook('C:/Users/Administrator/Desktop/codelines/scripts/xlsxpy/output.xlsx')
 worksheet = workbook.add_worksheet()
 
 begin = '<resources>\n'
@@ -11,7 +11,7 @@ def get_all_list():
     all_list = []
     for i in range(0, 12):
         rulist = []
-        rupath = 'C:/Users/Administrator/Desktop/xlsxpy/xml/' + str(i) +'.xml'
+        rupath = 'C:/Users/Administrator/Desktop/codelines/scripts/xlsxpy/xml/' + str(i) +'.xml'
         #print(rupath)
         document = parse(rupath)
         tree = document.getroot()
@@ -41,7 +41,7 @@ for i in li:
     #print(language[i])
     #new_list.append(language[i])
     #new_list.append(begin)
-    xmlpath = 'C:/Users/Administrator/Desktop/xlsxpy/xml/' + str(i) + '.xml'
+    xmlpath = 'C:/Users/Administrator/Desktop/codelines/scripts/xlsxpy/xml/' + str(i) + '.xml'
     doc = parse(xmlpath)
     element = parse_doc(doc)
     sorted_element = sorted(element.items())

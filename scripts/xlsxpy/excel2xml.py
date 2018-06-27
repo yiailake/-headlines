@@ -1,6 +1,6 @@
 from openpyxl import load_workbook
 
-wb = load_workbook('C:/Users/Administrator/Desktop/xlsxpy/strings.xlsx')
+wb = load_workbook('C:/Users/Administrator/Desktop/codelines/scripts/xlsxpy/strings.xlsx')
 print(wb.sheetnames)
 sheet = wb['Sheet1']
 
@@ -28,7 +28,7 @@ for i in range(0, 12):
             continue
         else:
             clist.append(str(cell.value) + '\n')
-    path = "C:/Users/Administrator/Desktop/xlsxpy/xml/" + str(i) + ".xml"
+    path = "C:/Users/Administrator/Desktop/codelines/scripts/xlsxpy/xml/" + str(i) + ".xml"
     f = open(path, "w", encoding='UTF-8')
     f.writelines(clist)
     f.close()
