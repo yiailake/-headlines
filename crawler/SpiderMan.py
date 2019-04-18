@@ -37,4 +37,4 @@ class SpiderMan(object):
 
 if __name__ == '__main__':
     spider_man = SpiderMan()
-    spider_man.crawl("http://www.runoob.com/w3cnote/page/1")
+    spider_man.crawl("https://www.jb51.net/books/40219.html")

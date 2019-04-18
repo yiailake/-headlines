@@ -11,7 +11,7 @@ class DataOutput(object):
         self.datas.append(data)
     
     def output_html(self):
-        fout = codecs.open('baike.html', 'a', encoding='utf-8')
+        fout = codecs.open('book.html', 'a', encoding='utf-8')
         fout.write("<html>")
         fout.write("<head><meta charset='utf-8'/></head>")
         fout.write("<body>")
@@ -20,7 +20,8 @@ class DataOutput(object):
             fout.write("<tr>")
             fout.write("<td>%s</td>"%data['url'])
             fout.write("<td>《%s》</td>" % data['title'])
-            fout.write("<td>[%s]</td>" % data['summary'])
+            fout.write("<td>%s</td>" % data['pub_time'])
+            fout.write("<td>%s</td>" % data['baidu_pan'])
             fout.write("</tr>")
             self.datas.remove(data)
         fout.write("</table>")

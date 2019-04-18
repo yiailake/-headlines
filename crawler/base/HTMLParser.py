@@ -25,9 +25,9 @@ class HTMLParser(object):
         :return: 返回新的 URL 集合
         '''
         new_urls = set()
-        for link in range(1, 100):
+        for link in range(668000, 668009):
             # 添加新的url
-            new_url = "http://www.runoob.com/w3cnote/page/"+str(link)
+            new_url = "https://www.jb51.net/books/"+str(link)+".html"
             new_urls.add(new_url)
             print(new_urls)
         return new_urls
@@ -41,9 +41,16 @@ class HTMLParser(object):
         '''
         data = {}
         data['url'] = page_url
-        title = soup.find('div', class_='post-intro').find('h2')
-        print(title)
-        data['title'] = title.get_text()
-        summary = soup.find('div', class_='post-intro').find('p')
-        data['summary'] = summary.get_text()
+        data['title'] = ''
+        data['pub_time'] = ''
+        data['baidu_pan'] = ''
+        if soup.find('dt', class_='new2') is not None:
+            title = soup.find('dt', class_='new2').find('h1')
+            data['title'] = title.get_text()
+        if soup.find('span', class_='pub-time') is not None:
+            pub_time = soup.find('span', class_='pub-time')
+            data['pub_time'] = pub_time.get_text()
+        if soup.find('li', class_='baidu') is not None:
+            baidu_pan = soup.find('li', class_='baidu').find('a')
+            data['baidu_pan'] = baidu_pan.get('href')
         return data
