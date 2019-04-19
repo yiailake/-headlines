@@ -25,11 +25,10 @@ class HTMLParser(object):
         :return: 返回新的 URL 集合
         '''
         new_urls = set()
-        for link in range(668000, 668009):
+        for link in range(667000, 669001):
             # 添加新的url
             new_url = "https://www.jb51.net/books/"+str(link)+".html"
             new_urls.add(new_url)
-            print(new_urls)
         return new_urls
 
     def _get_new_data(self, page_url, soup):

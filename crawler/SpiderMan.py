@@ -18,12 +18,14 @@ class SpiderMan(object):
             try:
                 # 从 URL 管理器获取新的 URL
                 new_url = self.manager.get_new_url()
-                print(new_url)
                 # HTML 下载器下载网页
                 html = self.downloader.download(new_url)
                 # HTML 解析器抽取网页数据
+                if html is None:
+                    self.manager.add_new_url(new_url)
+                    print(new_url)
+                    continue
                 new_urls, data = self.parser.parser(new_url, html)
-                print(new_urls)
                 # 将抽取的 url 添加到 URL 管理器中
                 self.manager.add_new_urls(new_urls)
                 # 数据存储器存储文件
